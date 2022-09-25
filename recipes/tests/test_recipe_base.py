@@ -25,7 +25,7 @@ class RecipeTestBase(TestCase):
             password=password,
             email=email,
         )
-    
+
     def make_recipe(
         self,
         category_data=None,
@@ -43,10 +43,10 @@ class RecipeTestBase(TestCase):
     ):
         if category_data is None:
             category_data = {}
-        
+
         if author_data is None:
             author_data = {}
-            
+
         return Recipe.objects.create(
             category=self.make_category(**category_data),
             author=self.make_author(**author_data),
@@ -61,4 +61,3 @@ class RecipeTestBase(TestCase):
             preparation_steps_is_html=preparation_steps_is_html,
             is_published=is_published,
         )
-    
